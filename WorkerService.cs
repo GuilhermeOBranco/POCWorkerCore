@@ -24,7 +24,7 @@ namespace POCWorkerCore
                     var ws = wb.Worksheets.Add("My first wb with closed xml");
                     ws.Cell(1,1).Value = "Um texto qualquer";
                     ws.Cell("A2").Value = "OUTRO TEXTO";
-                    wb.SaveAs("./documents/MySimpleTest.xlsx");
+                    wb.SaveAs(@$"./documents/MySimpleTest_{DateTime.Now.Minute}_{DateTime.Now.Second}.xlsx");
                 }
                 _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
                 await Task.Delay(2000);
